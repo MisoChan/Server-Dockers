@@ -7,11 +7,11 @@ ENV DIRECTORY="/Server-Dockers/dnsmasq/dns_blocks"
 ENV EXEC_SHELL="/Server-Dockers/dnsmasq/MalwareBlockDNS_dnsmasq.sh"
 
 RUN apk update && \
-apk add bash git dnsmasq sudo && \ 
+apk add bash git dnsmasq && \ 
 rm -rf /var/cache/apk/* 
 
 #キャッシュ回避
-ADD dummy /data/
+ADD MalwareBlockDNS_dnsmasq.sh /data/
 RUN git clone https://github.com/MisoChan/Server-Dockers 
 
 run mkdir -p /etc/default/
