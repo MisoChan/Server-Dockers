@@ -9,7 +9,7 @@ docker build .
 docker docker run --name=dns_server --restart=always -p 53:53/udp -itd [image-SHA]
 ```
 
-## 3. URL Lists Source
+## 3. URL Sources
 
 * pgl.yoyo.org  
 https://pgl.yoyo.org/
