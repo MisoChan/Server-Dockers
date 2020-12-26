@@ -1,5 +1,5 @@
 ## 1. What is this
-A DNS server that cannot resolve URLs that are reported as dangerous sites and ad trackings.
+A DNS server that cannot resolve URLs that are reported as dangerous sites, ad trackings, and armful content.
 
 ## 2. How to use
 Execute commands on this directory
