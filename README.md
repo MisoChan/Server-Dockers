@@ -1,9 +1,6 @@
 # README
 
 
-
-## 1. What is this?
-
 自宅サーバー（on Docker ）を運用する上で作ったDockerfilesが乗っています。
 
 
