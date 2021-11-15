@@ -4,6 +4,7 @@ ARG RESPONSE_IPv4="192.168.1.5"
 ARG RESPONSE_IPv6="::"
 ARG FORWARDER_PRIMARY_IP="5.2.75.75"
 ARG FORWARDER_SECONDARY_IP="45.67.219.208"
+ARG CACHE_SIZE="7500"
 
 ENV DIRECTORY="/Server-Dockers/dnsmasq/dns_blocks"
 ENV EXEC_SHELL="/Server-Dockers/dnsmasq/MalwareBlockDNS_dnsmasq.sh"
@@ -25,9 +26,10 @@ echo "domain-needed" >> /etc/dnsmasq.conf && \
 echo "bogus-priv" >> /etc/dnsmasq.conf && \
 echo "no-resolv" >> /etc/dnsmasq.conf && \
 echo "no-poll" >> /etc/dnsmasq.conf && \
+echo -e cache-size=${CACHE_SIZE} >> /etc/dnsmasq.conf && \
 echo -e server=${FORWARDER_PRIMARY_IP} >> /etc/dnsmasq.conf && \
 echo -e server=${FORWARDER_SECONDARY_IP} >> /etc/dnsmasq.conf && \
-bash $EXEC_SHELL 
+bash ${EXEC_SHELL} ${RESPONSE_IPv4} ${RESPONSE_IPv6} 
 
 
 CMD ["dnsmasq","--no-daemon"]
